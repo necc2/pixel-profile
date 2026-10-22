@@ -393,7 +393,25 @@ function showPage(page) {
     `;
   }
 }
+document.getElementById("theme-toggle")
+  .addEventListener("click", function () {
+    eventMode = !eventMode;
 
+    document.body.classList.toggle(
+      "halloween",
+      eventMode
+    );
+
+    this.textContent = eventMode
+      ? "🎃 HALLOWEEN"
+      : "✨ 通常モード";
+
+    if (currentPage === "home") {
+      homePage();
+    } else {
+      showPage(currentPage);
+    }
+  });
 homePage();
 </script>
 </body>
