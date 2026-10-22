@@ -341,6 +341,7 @@ function homePage() {
 }
 
 function showPage(page) {
+  currentPage = page;
   if (page === "profile") {
     eyebrow.textContent = "♡ MY PROFILE ♡";
     let rows = creator.profile.map(item => `
