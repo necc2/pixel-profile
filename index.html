@@ -1,0 +1,368 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fff8f7">
+<title>Rabbit World | Official Profile</title>
+<style>
+:root {
+  --bg: #fff8f7;
+  --pink: #dfa8bc;
+  --pink-dark: #a96782;
+  --pink-light: #fff0f4;
+  --white: #ffffff;
+  --text: #795563;
+  --yellow: #f7d64a;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Courier New", monospace;
+  min-height: 100vh;
+}
+button, a { font: inherit; }
+button { cursor: pointer; }
+.page {
+  width: min(100% - 28px, 720px);
+  margin: auto;
+  padding: 25px 0 35px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+.logo {
+  color: var(--pink-dark);
+  font-size: clamp(15px, 4vw, 23px);
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.status {
+  background: white;
+  border: 3px solid var(--pink);
+  box-shadow: 4px 4px 0 #f3dce5;
+  padding: 8px 10px;
+  font-size: 10px;
+  color: var(--pink-dark);
+  white-space: nowrap;
+}
+.decor {
+  text-align: center;
+  color: #e5bd36;
+  letter-spacing: 7px;
+  margin: 15px 0;
+  font-size: 17px;
+}
+.frame {
+  background: white;
+  border: 6px solid var(--pink);
+  outline: 2px solid #bc7e96;
+  box-shadow: 7px 7px 0 #f3dce5;
+  padding: clamp(17px, 5vw, 34px);
+  position: relative;
+  min-height: 390px;
+}
+.frame::before, .frame::after {
+  content: "";
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  background: var(--bg);
+}
+.frame::before { top: -7px; left: 22px; }
+.frame::after { bottom: -7px; right: 22px; }
+.eyebrow {
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--pink-dark);
+  margin: 0 0 13px;
+}
+h1, h2 {
+  text-align: center;
+  color: var(--pink-dark);
+}
+h1 { font-size: clamp(24px, 7vw, 37px); margin: 8px 0; }
+h2 { font-size: 23px; margin: 0 0 20px; }
+.subtitle {
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.9;
+}
+.avatar {
+  width: 150px;
+  height: 150px;
+  max-width: 65%;
+  margin: 22px auto 15px;
+  border: 4px solid var(--pink);
+  outline: 2px solid #f2d6e1;
+  background: var(--pink-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-size: 60px;
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.creator-name {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--pink-dark);
+  overflow-wrap: anywhere;
+}
+.tagline {
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.8;
+}
+.menu {
+  display: grid;
+  gap: 12px;
+  margin-top: 25px;
+}
+.menu-button, .back-button, .link-button {
+  width: 100%;
+  display: block;
+  padding: 14px 10px;
+  text-align: center;
+  text-decoration: none;
+  background: #fffafd;
+  border: 3px solid var(--pink);
+  color: var(--pink-dark);
+  box-shadow: 4px 4px 0 #f3dce5;
+  font-weight: bold;
+  font-size: 13px;
+}
+.menu-button:active, .back-button:active, .link-button:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 #f3dce5;
+}
+.menu-button.primary {
+  background: var(--pink);
+  color: white;
+}
+.card {
+  background: var(--pink-light);
+  border: 2px solid #f0d4df;
+  padding: 15px;
+  margin: 12px 0;
+  font-size: 13px;
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+.card strong { color: var(--pink-dark); }
+.link-button { margin: 10px 0; }
+.back-button { margin-top: 20px; background: white; }
+.post-date {
+  color: #a47785;
+  font-size: 11px;
+}
+.empty {
+  text-align: center;
+  padding: 20px 5px;
+  font-size: 13px;
+  line-height: 2;
+}
+.footer {
+  text-align: center;
+  font-size: 10px;
+  color: #b28c9a;
+  margin-top: 25px;
+  line-height: 2;
+}
+.bottom-decor {
+  display: flex;
+  justify-content: space-between;
+  margin: 22px 3px 0;
+  color: var(--pink-dark);
+  font-size: 26px;
+}
+@media (min-width: 520px) {
+  .menu { grid-template-columns: 1fr 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header class="header">
+  <div class="logo">୨୧ RABBIT WORLD</div>
+  <div class="status">♡ STATUS<br>✦ ONLINE ✦</div>
+</header>
+
+<div class="decor" aria-hidden="true">✦ ･ﾟﾟ･ ♡ ･ﾟﾟ･ ✦</div>
+
+<main class="frame">
+  <p class="eyebrow" id="eyebrow">WELCOME TO MY WORLD</p>
+  <section id="content" aria-live="polite"></section>
+</main>
+
+<div class="bottom-decor" aria-hidden="true">
+  <span>୨୧</span><span>♡ ✦ ♡</span><span>୨୧</span>
+</div>
+
+<footer class="footer">
+  © RABBIT WORLD<br>
+  THANK YOU FOR VISITING ♡
+</footer>
+</div>
+
+<script>
+/*
+  =====================================
+  設定エリア：ここを編集すると変更できます
+  =====================================
+*/
+const creator = {
+  name: "あなたのお名前",
+  tagline: "ふわふわ、のんびり活動中 ♡",
+  avatar: "", 
+  // アイコン画像のパス。例："images/avatar.png"
+  // 空欄なら仮のうさぎアイコンが表示されます
+
+  profile: [
+    ["活動内容", "歌・ゲーム・配信など"],
+    ["誕生日", "準備中"],
+    ["好きなもの", "準備中"],
+    ["ひとこと", "よろしくお願いします ♡"]
+  ],
+
+  posts: [
+    {
+      date: "2026.10.23",
+      title: "はじめまして！",
+      text: "ここに投稿やお知らせを記載できます。"
+    }
+  ],
+
+  sns: [
+    { name: "X", url: "" },
+    { name: "TikTok", url: "" },
+    { name: "YouTube", url: "" }
+  ]
+};
+
+/* ここから下はサイトの動作処理です */
+
+const content = document.getElementById("content");
+const eyebrow = document.getElementById("eyebrow");
+
+function safeText(value) {
+  return String(value ?? "").replace(/[&<>"']/g, function(c) {
+    return {
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;"
+    }[c];
+  });
+}
+
+function avatarHTML() {
+  if (creator.avatar.trim()) {
+    return `<div class="avatar">
+      <img src="${safeText(creator.avatar)}"
+      alt="${safeText(creator.name)}のアイコン"
+      onerror="this.parentElement.textContent='🐰'">
+    </div>`;
+  }
+  return `<div class="avatar" aria-label="仮のアイコン">🐰</div>`;
+}
+
+function homePage() {
+  eyebrow.textContent = "WELCOME TO MY WORLD";
+  content.innerHTML = `
+    <h1>RABBIT WORLD</h1>
+    <p class="subtitle">ようこそ、わたしのお部屋へ ♡</p>
+    ${avatarHTML()}
+    <div class="creator-name">${safeText(creator.name)}</div>
+    <p class="tagline">${safeText(creator.tagline)}</p>
+
+    <div class="menu">
+      <button class="menu-button primary" onclick="showPage('profile')">
+        ♡ プロフィール
+      </button>
+      <button class="menu-button" onclick="showPage('posts')">
+        ✦ 投稿
+      </button>
+      <button class="menu-button" onclick="showPage('sns')">
+        ♡ SNSアカウント
+      </button>
+    </div>
+    <div class="decor" aria-hidden="true">୨୧ ── ♡ ── ୨୧</div>
+  `;
+}
+
+function showPage(page) {
+  if (page === "profile") {
+    eyebrow.textContent = "♡ MY PROFILE ♡";
+    let rows = creator.profile.map(item => `
+      <div><strong>${safeText(item[0])}</strong><br>
+      ${safeText(item[1])}</div>
+    `).join("<hr style='border:0;border-top:1px dashed #dfa8bc;margin:12px 0'>");
+
+    content.innerHTML = `
+      <h2>PROFILE</h2>
+      ${avatarHTML()}
+      <div class="creator-name">${safeText(creator.name)}</div>
+      <p class="tagline">${safeText(creator.tagline)}</p>
+      <div class="card">${rows}</div>
+      <button class="back-button" onclick="homePage()">♡ HOMEへ戻る</button>
+    `;
+  } else if (page === "posts") {
+    eyebrow.textContent = "✦ MY POSTS ✦";
+    let posts = creator.posts.map(post => `
+      <article class="card">
+        <div class="post-date">${safeText(post.date)}</div>
+        <strong>${safeText(post.title)}</strong>
+        <div>${safeText(post.text).replace(/\n/g, "<br>")}</div>
+      </article>
+    `).join("");
+
+    content.innerHTML = `
+      <h2>POST</h2>
+      ${posts || '<div class="empty">投稿はまだありません ♡</div>'}
+      <button class="back-button" onclick="homePage()">♡ HOMEへ戻る</button>
+    `;
+  } else if (page === "sns") {
+    eyebrow.textContent = "♡ FOLLOW ME ♡";
+    let links = creator.sns.map(sns => {
+      const valid = /^https:\/\/[^\s"'<>]+$/i.test(sns.url);
+      return valid
+        ? `<a class="link-button" href="${safeText(sns.url)}"
+             target="_blank" rel="noopener noreferrer">
+             ♡ ${safeText(sns.name)} を開く ↗
+           </a>`
+        : `<div class="card"><strong>${safeText(sns.name)}</strong><br>
+             リンクは準備中です ♡</div>`;
+    }).join("");
+
+    content.innerHTML = `
+      <h2>SNS ACCOUNT</h2>
+      <p class="subtitle">各アカウントはこちらから ♡</p>
+      ${links}
+      <button class="back-button" onclick="homePage()">♡ HOMEへ戻る</button>
+    `;
+  }
+}
+
+homePage();
+</script>
+</body>
+</html>
