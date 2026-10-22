@@ -298,14 +298,19 @@ function safeText(value) {
 }
 
 function avatarHTML() {
-  if (creator.avatar.trim()) {
+  const imagePath = eventMode
+    ? creator.eventAvatar
+    : creator.avatar;
+
+  if (imagePath && imagePath.trim()) {
     return `<div class="avatar">
-      <img src="${safeText(creator.avatar)}"
+      <img src="${safeText(imagePath)}"
       alt="${safeText(creator.name)}のアイコン"
       onerror="this.parentElement.textContent='🐰'">
     </div>`;
   }
-  return `<div class="avatar" aria-label="仮のアイコン">🐰</div>`;
+
+  return `<div class="avatar">🐰</div>`;
 }
 
 function homePage() {
